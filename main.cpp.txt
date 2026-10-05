@@ -68,7 +68,7 @@ public:
     }
 
     Indicadores construirIndicadores() const {
-        Indicadores panel{}; // Evita el Most Vexing Parse con los paréntesis vacíos
+        Indicadores panel{}; 
         // TODO 5: asigna energia=1, conexion=1, alarma=1 y modo=2
         panel.energia = 1;
         panel.conexion = 1;
@@ -84,14 +84,12 @@ int main() {
     
     cout << "Sensores activos: " << sistema.contarActivos() << '\n'; 
     
-    // Corrección: MASCARA_ALARMA (sin espacio)
     cout << "Sensor 102 con alarma: " 
          << (sistema.tieneBandera(1, MASCARA_ALARMA) ? "SI" : "NO") 
          << '\n';
          
     sistema.activarBandera(0, BIT_ALARMA);
     
-    // Corrección: sintaxis correcta para concatenar el cout multilínea
     cout << "Sensor 101 con alarma despues de activar: " 
          << (sistema.tieneBandera(0, MASCARA_ALARMA) ? "SI" : "NO") 
          << '\n';
